@@ -1,0 +1,15 @@
+---
+- hosts: local
+  gather_facts: True
+  become: yes
+  
+  
+  roles:
+    - { role: deploy_static_server, when: ansible_system == 'Linux' }
+    
+- hosts: local
+  gather_facts: True
+  become: yes
+ 
+  roles:
+    - { role: deploy_static_server, when: ansible_system == 'Linux' }
